@@ -8,6 +8,65 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============================================
+     KONFIGURASI GAMBAR - EDIT DI SINI!
+     Ganti path dengan file Anda sendiri
+     ============================================ -->
+<script>
+  window.IMAGES = {
+    // Folder tempat Anda menyimpan gambar autentik
+    basePath: './images/',
+    
+    // Gambar utama
+    hero: {
+      // Kosongkan string jika ingin pakai fallback Unsplash
+      local: 'gayo-plantation.jpg',  // <-- Ganti dengan file Anda
+      fallback: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1920&h=1080&fit=crop'
+    },
+    
+    // Section Sejarah/Intro
+    intro: {
+      local: 'danau-laut-tawar.jpg',  // <-- Ganti dengan file Anda
+      fallback: 'https://images.unsplash.com/photo-1524350876685-27425e248a83?w=800&h=1000&fit=crop'
+    },
+    
+    // Ragam Kopi
+    varieties: {
+      gayoArabika: {
+        local: 'kopi-gayo-arabika.jpg',  // <-- Ganti dengan file Anda
+        fallback: 'https://plus.unsplash.com/premium_photo-1675716448244-78d526009a59?w=600&h=400&fit=crop'
+      },
+      saree: {
+        local: 'kopi-saree.jpg',  // <-- Ganti dengan file Anda
+        fallback: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&h=400&fit=crop'
+      },
+      robusta: {
+        local: 'kopi-robusta-aceh.jpg',  // <-- Ganti dengan file Anda
+        fallback: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&h=400&fit=crop'
+      },
+      catimor: {
+        local: 'petani-gayo-panen.jpg',  // <-- Ganti dengan file Anda
+        fallback: 'https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=600&h=400&fit=crop'
+      },
+      wineGayo: {
+        local: 'wine-gayo-process.jpg',  // <-- Ganti dengan file Anda
+        fallback: 'https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=600&h=400&fit=crop'
+      },
+      honeyProcess: {
+        local: 'honey-process.jpg',  // <-- Ganti dengan file Anda
+        fallback: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop'
+      }
+    },
+    
+    // Section Budaya
+    culture: {
+      local: 'warkop-aceh.jpg',  // <-- Ganti dengan file Anda
+      fallback: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=800&fit=crop'
+    }
+  };
+</script>
+
 <style>
   :root {
     --bg: #f5f0e8;
@@ -380,7 +439,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(20%) contrast(1.05);
+    filter: grayscale(15%) contrast(1.05);
   }
 
   .intro-caption {
@@ -952,7 +1011,7 @@
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="hero-video-container">
-    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1920&h=1080&fit=crop">
+    <video class="hero-video" autoplay muted loop playsinline poster="">
       <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-coffee-plantation-4365-large.mp4" type="video/mp4">
     </video>
   </div>
@@ -1020,8 +1079,8 @@
       </div>
 
       <div class="intro-visual reveal">
-        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=1000&fit=crop" alt="Kebun kopi Gayo di dataran tinggi Aceh">
-        <div class="intro-caption">Kebun kopi di lereng vulkanik Gayo, Aceh Tengah</div>
+        <img src="" alt="Pemandangan Dataran Tinggi Gayo dengan Danau Laut Tawar" data-img="intro">
+        <div class="intro-caption">Dataran Tinggi Gayo, Aceh Tengah — rumah bagi kopi terbaik dunia</div>
       </div>
     </div>
   </div>
@@ -1039,7 +1098,7 @@
     <div class="varieties-grid reveal-stagger">
       <article class="variety-card">
         <div class="variety-image">
-          <img src="https://images.unsplash.com/photo-1524350876685-27425e248a83?w=600&h=400&fit=crop" alt="Biji kopi arabika Gayo">
+          <img src="" alt="Buah kopi merah Gayo yang siap panen" data-img="gayoArabika">
         </div>
         <div class="variety-content">
           <h3 class="variety-name">Gayo Arabika</h3>
@@ -1055,7 +1114,7 @@
 
       <article class="variety-card">
         <div class="variety-image">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&h=400&fit=crop" alt="Kopi Saree dengan telur dan madu">
+          <img src="" alt="Proses penyaringan kopi tradisional" data-img="saree">
         </div>
         <div class="variety-content">
           <h3 class="variety-name">Saree</h3>
@@ -1071,7 +1130,7 @@
 
       <article class="variety-card">
         <div class="variety-image">
-          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&h=400&fit=crop" alt="Kopi robusta Aceh">
+          <img src="" alt="Biji kopi robusta" data-img="robusta">
         </div>
         <div class="variety-content">
           <h3 class="variety-name">Robusta Aceh</h3>
@@ -1087,7 +1146,7 @@
 
       <article class="variety-card">
         <div class="variety-image">
-          <img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=600&h=400&fit=crop" alt="Kopi Catimor Gayo">
+          <img src="" alt="Petani Gayo memanen kopi" data-img="catimor">
         </div>
         <div class="variety-content">
           <h3 class="variety-name">Catimor Gayo</h3>
@@ -1103,7 +1162,7 @@
 
       <article class="variety-card">
         <div class="variety-image">
-          <img src="https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=600&h=400&fit=crop" alt="Proses natural wine gayo">
+          <img src="" alt="Proses natural wine gayo" data-img="wineGayo">
         </div>
         <div class="variety-content">
           <h3 class="variety-name">Wine Gayo</h3>
@@ -1119,7 +1178,7 @@
 
       <article class="variety-card">
         <div class="variety-image">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop" alt="Kopi honey process">
+          <img src="" alt="Proses honey processing kopi Gayo" data-img="honeyProcess">
         </div>
         <div class="variety-content">
           <h3 class="variety-name">Honey Process</h3>
@@ -1219,7 +1278,7 @@
 
     <div class="culture-grid">
       <div class="culture-visual reveal">
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=800&fit=crop" alt="Warung kopi tradisional Aceh">
+        <img src="" alt="Suasana warung kopi tradisional yang ramai" data-img="culture">
       </div>
 
       <div class="reveal">
@@ -1313,6 +1372,67 @@
 </footer>
 
 <script>
+  // ====== IMAGE LOADER DENGAN FALLBACK ======
+  function loadImage(imgElement, imgKey) {
+    const basePath = window.IMAGES.basePath;
+    let imgConfig;
+    
+    // Tentukan konfigurasi gambar berdasarkan key
+    if (imgKey === 'hero') {
+      imgConfig = window.IMAGES.hero;
+    } else if (window.IMAGES.varieties[imgKey]) {
+      imgConfig = window.IMAGES.varieties[imgKey];
+    } else {
+      imgConfig = window.IMAGES[imgKey];
+    }
+    
+    if (!imgConfig) return;
+    
+    // Coba load gambar lokal dulu
+    const localPath = basePath + imgConfig.local;
+    const img = new Image();
+    
+    img.onload = function() {
+      // Jika lokal berhasil load, pakai itu
+      imgElement.src = localPath;
+      imgElement.classList.add('loaded');
+    };
+    
+    img.onerror = function() {
+      // Jika lokal gagal, pakai fallback
+      imgElement.src = imgConfig.fallback;
+      imgElement.classList.add('fallback');
+      console.log(`Using fallback for ${imgKey}: ${imgConfig.fallback}`);
+    };
+    
+    // Trigger load
+    img.src = localPath;
+  }
+
+  // Load semua gambar saat DOM ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load hero poster
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo && window.IMAGES.hero) {
+      const basePath = window.IMAGES.basePath;
+      const heroConfig = window.IMAGES.hero;
+      const heroImg = new Image();
+      heroImg.onload = function() {
+        heroVideo.setAttribute('poster', basePath + heroConfig.local);
+      };
+      heroImg.onerror = function() {
+        heroVideo.setAttribute('poster', heroConfig.fallback);
+      };
+      heroImg.src = basePath + heroConfig.local;
+    }
+    
+    // Load semua gambar dengan data-img attribute
+    document.querySelectorAll('img[data-img]').forEach(function(img) {
+      const imgKey = img.getAttribute('data-img');
+      loadImage(img, imgKey);
+    });
+  });
+
   // ====== NAV SCROLL ======
   const nav = document.getElementById('nav');
   const onScroll = () => {
