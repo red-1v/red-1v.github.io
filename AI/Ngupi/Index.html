@@ -11,57 +11,28 @@
 
 <!-- ============================================
      KONFIGURASI GAMBAR - EDIT DI SINI!
-     Ganti path dengan file Anda sendiri
      ============================================ -->
 <script>
   window.IMAGES = {
-    // Folder tempat Anda menyimpan gambar autentik
     basePath: './images/',
-    
-    // Gambar utama
     hero: {
-      // Kosongkan string jika ingin pakai fallback Unsplash
-      local: 'gayo-plantation.jpg',  // <-- Ganti dengan file Anda
+      local: 'gayo-plantation.jpg',
       fallback: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1920&h=1080&fit=crop'
     },
-    
-    // Section Sejarah/Intro
     intro: {
-      local: 'danau-laut-tawar.jpg',  // <-- Ganti dengan file Anda
+      local: 'danau-laut-tawar.jpg',
       fallback: 'https://images.unsplash.com/photo-1524350876685-27425e248a83?w=800&h=1000&fit=crop'
     },
-    
-    // Ragam Kopi
     varieties: {
-      gayoArabika: {
-        local: 'kopi-gayo-arabika.jpg',  // <-- Ganti dengan file Anda
-        fallback: 'https://plus.unsplash.com/premium_photo-1675716448244-78d526009a59?w=600&h=400&fit=crop'
-      },
-      saree: {
-        local: 'kopi-saree.jpeg',  // <-- Ganti dengan file Anda
-        fallback: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&h=400&fit=crop'
-      },
-      robusta: {
-        local: 'kopi-robusta-aceh.jpg',  // <-- Ganti dengan file Anda
-        fallback: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&h=400&fit=crop'
-      },
-      catimor: {
-        local: 'petani-gayo-panen.jpg',  // <-- Ganti dengan file Anda
-        fallback: 'https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=600&h=400&fit=crop'
-      },
-      wineGayo: {
-        local: 'wine-gayo-process.jpg',  // <-- Ganti dengan file Anda
-        fallback: 'https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=600&h=400&fit=crop'
-      },
-      honeyProcess: {
-        local: 'honey-process.jpeg',  // <-- Ganti dengan file Anda
-        fallback: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop'
-      }
+      gayoArabika: { local: 'kopi-gayo-arabika.jpg', fallback: 'https://plus.unsplash.com/premium_photo-1675716448244-78d526009a59?w=600&h=400&fit=crop' },
+      saree: { local: 'kopi-saree.jpeg', fallback: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&h=400&fit=crop' },
+      robusta: { local: 'kopi-robusta-aceh.jpg', fallback: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&h=400&fit=crop' },
+      catimor: { local: 'petani-gayo-panen.jpg', fallback: 'https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=600&h=400&fit=crop' },
+      wineGayo: { local: 'wine-gayo-process.jpg', fallback: 'https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=600&h=400&fit=crop' },
+      honeyProcess: { local: 'honey-process.jpeg', fallback: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop' }
     },
-    
-    // Section Budaya
     culture: {
-      local: 'warkop-aceh2.jpg',  // <-- Ganti dengan file Anda
+      local: 'warkop-aceh2.jpg',
       fallback: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=800&fit=crop'
     }
   };
@@ -85,7 +56,6 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -99,9 +69,7 @@
   }
 
   ::selection { background: var(--gold); color: var(--bg-deep); }
-
   img { max-width: 100%; display: block; object-fit: cover; }
-
   a { color: inherit; text-decoration: none; }
 
   h1, h2, h3, h4 {
@@ -178,6 +146,45 @@
   .nav-links a:hover { color: var(--accent); }
   .nav-links a:hover::after { width: 100%; }
 
+  /* Dropdown Desktop */
+  .nav-dropdown { position: relative; }
+  
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s var(--ease);
+    min-width: 220px;
+    z-index: 101;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--line);
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-dropdown-menu a:last-child { border-bottom: none; }
+  .nav-dropdown-menu a:hover { background: var(--bg-alt); color: var(--accent); }
+  .nav-dropdown-menu a::after { display: none; }
+
   .nav-toggle {
     display: none;
     background: none;
@@ -208,7 +215,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding: 8rem 0 4rem;
+    padding: 10rem 0 8rem;
     overflow: hidden;
     background: var(--bg-deep);
   }
@@ -297,14 +304,12 @@
     display: flex;
     gap: 4rem;
     flex-wrap: wrap;
-    padding-top: 2.5rem;
+    padding-top: 3rem;
+    margin-bottom: 4rem;
     border-top: 1px solid rgba(245, 240, 232, 0.2);
   }
 
-  .hero-meta-item {
-    display: flex;
-    flex-direction: column;
-  }
+  .hero-meta-item { display: flex; flex-direction: column; }
 
   .hero-meta-num {
     font-family: 'Cormorant Garamond', serif;
@@ -324,7 +329,7 @@
 
   .scroll-hint {
     position: absolute;
-    bottom: 2.5rem;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.7rem;
@@ -398,10 +403,7 @@
   }
 
   /* ---------- INTRO / SEJARAH ---------- */
-  .intro {
-    background: var(--bg-alt);
-    position: relative;
-  }
+  .intro { background: var(--bg-alt); position: relative; }
 
   .intro-grid {
     display: grid;
@@ -444,9 +446,7 @@
 
   .intro-caption {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0; left: 0; right: 0;
     background: linear-gradient(to top, rgba(26, 18, 11, 0.9), transparent);
     color: var(--bg);
     font-family: 'Cormorant Garamond', serif;
@@ -475,9 +475,7 @@
     padding-bottom: 3rem;
   }
 
-  .timeline-item:last-child {
-    padding-bottom: 0;
-  }
+  .timeline-item:last-child { padding-bottom: 0; }
 
   .timeline-item::before {
     content: '';
@@ -520,6 +518,8 @@
     transition: all 0.5s var(--ease);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .variety-card::before {
@@ -555,18 +555,16 @@
     transition: transform 0.7s var(--ease);
   }
 
-  .variety-card:hover .variety-image img {
-    transform: scale(1.05);
-  }
+  .variety-card:hover .variety-image img { transform: scale(1.05); }
 
   .variety-content {
     padding: 2.25rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
-  .variety-name {
-    font-size: 1.85rem;
-    margin-bottom: 0.4rem;
-  }
+  .variety-name { font-size: 1.85rem; margin-bottom: 0.4rem; }
 
   .variety-origin {
     font-size: 0.75rem;
@@ -581,6 +579,7 @@
     font-size: 0.98rem;
     margin-bottom: 1.5rem;
     line-height: 1.7;
+    flex: 1;
   }
 
   .variety-notes {
@@ -589,6 +588,7 @@
     gap: 0.5rem;
     padding-top: 1.25rem;
     border-top: 1px solid var(--line);
+    margin-bottom: 1.5rem;
   }
 
   .note-tag {
@@ -602,11 +602,24 @@
     font-weight: 500;
   }
 
-  /* ---------- PENYAJIAN ---------- */
-  .serving {
-    background: var(--bg-deep);
-    color: var(--bg);
+  .card-detail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: gap 0.3s var(--ease);
+    margin-top: auto;
   }
+
+  .card-detail-link:hover { gap: 0.75rem; }
+  .card-detail-link svg { width: 14px; height: 14px; }
+
+  /* ---------- PENYAJIAN ---------- */
+  .serving { background: var(--bg-deep); color: var(--bg); }
 
   .serving .section-label { color: var(--gold); }
   .serving .section-label::before,
@@ -630,10 +643,7 @@
     position: relative;
   }
 
-  .serving-item:nth-child(3n) {
-    border-right: none;
-  }
-
+  .serving-item:nth-child(3n) { border-right: none; }
   .serving-item:hover { background: rgba(245, 240, 232, 0.05); }
 
   .serving-num {
@@ -727,16 +737,9 @@
     box-shadow: var(--shadow);
   }
 
-  .culture-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  .culture-visual img { width: 100%; height: 100%; object-fit: cover; }
 
-  .culture-list {
-    list-style: none;
-    margin-top: 2.5rem;
-  }
+  .culture-list { list-style: none; margin-top: 2.5rem; }
 
   .culture-list li {
     padding: 1.75rem 0;
@@ -909,6 +912,11 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px) {
+    .hero { padding: 9rem 0 7rem; }
+    .hero-meta { gap: 2.5rem; margin-bottom: 3rem; }
+    .hero-meta-num { font-size: 2.5rem; }
+    .scroll-hint { bottom: 2.5rem; }
+
     .intro-grid,
     .culture-grid,
     .footer-grid {
@@ -929,48 +937,50 @@
       background: var(--bg);
       flex-direction: column;
       padding: 7rem 2.5rem 2.5rem;
-      gap: 1.75rem;
+      gap: 1rem;
       transform: translateX(100%);
       transition: transform 0.4s var(--ease);
       border-left: 1px solid var(--line);
       box-shadow: -20px 0 60px rgba(42, 24, 16, 0.15);
+      overflow-y: auto;
     }
 
     .nav-links.open { transform: translateX(0); }
-
     .nav-links a { font-size: 1.05rem; }
 
-    .hero-meta { gap: 2.5rem; }
-    .hero-meta-num { font-size: 2.5rem; }
-
-    .serving-item:nth-child(3n) {
-      border-right: 1px solid rgba(245, 240, 232, 0.15);
+    /* Mobile Dropdown */
+    .nav-dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      border-left: 2px solid var(--accent);
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+      display: none;
     }
 
-    .serving-item:last-child {
-      border-right: none;
-    }
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+
+    .serving-item:nth-child(3n) { border-right: 1px solid rgba(245, 240, 232, 0.15); }
+    .serving-item:last-child { border-right: none; }
   }
 
   @media (max-width: 600px) {
-    .hero { padding: 7rem 0 3rem; }
-    
-    .hero-video {
-      opacity: 0.4;
-    }
-
+    .hero { padding: 8rem 0 6rem; }
+    .hero-video { opacity: 0.4; }
     .hero h1 { font-size: clamp(2.75rem, 9vw, 5rem); }
     .hero-sub { font-size: 1.05rem; }
+    .hero-meta { gap: 2rem; margin-bottom: 3.5rem; }
+    .scroll-hint { bottom: 2rem; }
 
     .serving-item { padding: 2.5rem 1.75rem; }
     .variety-content { padding: 2rem 1.5rem; }
     .variety-image { height: 200px; }
 
-    .culture-list li {
-      grid-template-columns: 50px 1fr;
-      gap: 1.25rem;
-    }
-
+    .culture-list li { grid-template-columns: 50px 1fr; gap: 1.25rem; }
     .culture-num { font-size: 1.65rem; }
     .culture-item-title { font-size: 1.3rem; }
 
@@ -1001,7 +1011,17 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#sejarah">Sejarah</a></li>
-      <li><a href="#ragam">Ragam</a></li>
+      <li class="nav-dropdown" id="ragamDropdown">
+        <a href="#ragam">Ragam</a>
+        <div class="nav-dropdown-menu">
+          <a href="Pages/gayo-arabika.html">Gayo Arabika</a>
+          <a href="Pages/saree.html">Saree</a>
+          <a href="Pages/robusta.html">Robusta Aceh</a>
+          <a href="Pages/catimor.html">Catimor Gayo</a>
+          <a href="Pages/wine-gayo.html">Wine Gayo</a>
+          <a href="Pages/honey-process.html">Honey Process</a>
+        </div>
+      </li>
       <li><a href="#sajian">Penyajian</a></li>
       <li><a href="#budaya">Budaya</a></li>
     </ul>
@@ -1037,8 +1057,8 @@
         <span class="hero-meta-label">Mdpl · Takengon</span>
       </div>
       <div class="hero-meta-item">
-        <span class="hero-meta-num" data-count="7">0</span>
-        <span class="hero-meta-label">Ragam sajian</span>
+        <span class="hero-meta-num" data-count="65000">0</span>
+        <span class="hero-meta-label">Hektar · Luas lahan</span>
       </div>
     </div>
   </div>
@@ -1096,6 +1116,7 @@
     </div>
 
     <div class="varieties-grid reveal-stagger">
+      <!-- Kartu 1 -->
       <article class="variety-card">
         <div class="variety-image">
           <img src="" alt="Buah kopi merah Gayo yang siap panen" data-img="gayoArabika">
@@ -1109,9 +1130,14 @@
             <span class="note-tag">Spicy</span>
             <span class="note-tag">Dark Chocolate</span>
           </div>
+          <a href="Pages/gayo-arabika.html" class="card-detail-link">
+            Klik untuk mengetahui lebih lanjut
+            <svg viewBox="0 0 14 14" fill="none"><path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
+      <!-- Kartu 2 -->
       <article class="variety-card">
         <div class="variety-image">
           <img src="" alt="Proses penyaringan kopi tradisional" data-img="saree">
@@ -1125,9 +1151,14 @@
             <span class="note-tag">Rich</span>
             <span class="note-tag">Savory</span>
           </div>
+          <a href="Pages/saree.html" class="card-detail-link">
+            Klik untuk mengetahui lebih lanjut
+            <svg viewBox="0 0 14 14" fill="none"><path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
+      <!-- Kartu 3 -->
       <article class="variety-card">
         <div class="variety-image">
           <img src="" alt="Biji kopi robusta" data-img="robusta">
@@ -1141,9 +1172,14 @@
             <span class="note-tag">Nutty</span>
             <span class="note-tag">Bitter</span>
           </div>
+          <a href="Pages/robusta.html" class="card-detail-link">
+            Klik untuk mengetahui lebih lanjut
+            <svg viewBox="0 0 14 14" fill="none"><path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
+      <!-- Kartu 4 -->
       <article class="variety-card">
         <div class="variety-image">
           <img src="" alt="Petani Gayo memanen kopi" data-img="catimor">
@@ -1157,9 +1193,14 @@
             <span class="note-tag">Cedar</span>
             <span class="note-tag">Tobacco</span>
           </div>
+          <a href="Pages/catimor.html" class="card-detail-link">
+            Klik untuk mengetahui lebih lanjut
+            <svg viewBox="0 0 14 14" fill="none"><path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
+      <!-- Kartu 5 -->
       <article class="variety-card">
         <div class="variety-image">
           <img src="" alt="Proses natural wine gayo" data-img="wineGayo">
@@ -1173,9 +1214,14 @@
             <span class="note-tag">Berry</span>
             <span class="note-tag">Fermented</span>
           </div>
+          <a href="Pages/wine-gayo.html" class="card-detail-link">
+            Klik untuk mengetahui lebih lanjut
+            <svg viewBox="0 0 14 14" fill="none"><path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
+      <!-- Kartu 6 -->
       <article class="variety-card">
         <div class="variety-image">
           <img src="" alt="Proses honey processing kopi Gayo" data-img="honeyProcess">
@@ -1189,6 +1235,10 @@
             <span class="note-tag">Caramel</span>
             <span class="note-tag">Smooth</span>
           </div>
+          <a href="Pages/honey-process.html" class="card-detail-link">
+            Klik untuk mengetahui lebih lanjut
+            <svg viewBox="0 0 14 14" fill="none"><path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
     </div>
@@ -1384,7 +1434,6 @@
     const basePath = window.IMAGES.basePath;
     let imgConfig;
     
-    // Tentukan konfigurasi gambar berdasarkan key
     if (imgKey === 'hero') {
       imgConfig = window.IMAGES.hero;
     } else if (window.IMAGES.varieties[imgKey]) {
@@ -1395,48 +1444,35 @@
     
     if (!imgConfig) return;
     
-    // Coba load gambar lokal dulu
     const localPath = basePath + imgConfig.local;
     const img = new Image();
     
     img.onload = function() {
-      // Jika lokal berhasil load, pakai itu
       imgElement.src = localPath;
       imgElement.classList.add('loaded');
     };
     
     img.onerror = function() {
-      // Jika lokal gagal, pakai fallback
       imgElement.src = imgConfig.fallback;
       imgElement.classList.add('fallback');
-      console.log(`Using fallback for ${imgKey}: ${imgConfig.fallback}`);
     };
     
-    // Trigger load
     img.src = localPath;
   }
 
-  // Load semua gambar saat DOM ready
   document.addEventListener('DOMContentLoaded', function() {
-    // Load hero poster
     const heroVideo = document.querySelector('.hero-video');
     if (heroVideo && window.IMAGES.hero) {
       const basePath = window.IMAGES.basePath;
       const heroConfig = window.IMAGES.hero;
       const heroImg = new Image();
-      heroImg.onload = function() {
-        heroVideo.setAttribute('poster', basePath + heroConfig.local);
-      };
-      heroImg.onerror = function() {
-        heroVideo.setAttribute('poster', heroConfig.fallback);
-      };
+      heroImg.onload = function() { heroVideo.setAttribute('poster', basePath + heroConfig.local); };
+      heroImg.onerror = function() { heroVideo.setAttribute('poster', heroConfig.fallback); };
       heroImg.src = basePath + heroConfig.local;
     }
     
-    // Load semua gambar dengan data-img attribute
     document.querySelectorAll('img[data-img]').forEach(function(img) {
-      const imgKey = img.getAttribute('data-img');
-      loadImage(img, imgKey);
+      loadImage(img, img.getAttribute('data-img'));
     });
   });
 
@@ -1452,14 +1488,32 @@
   // ====== MOBILE NAV ======
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+  const ragamDropdown = document.getElementById('ragamDropdown');
+  
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('open');
     links.classList.toggle('open');
   });
+
+  // Toggle submenu mobile untuk Ragam
+  if (ragamDropdown) {
+    const dropdownLink = ragamDropdown.querySelector('a');
+    dropdownLink.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        ragamDropdown.classList.toggle('open');
+      }
+    });
+  }
+
+  // Close mobile menu when clicking links
   links.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      links.classList.remove('open');
+      if (!a.parentElement.classList.contains('nav-dropdown')) {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+        if (ragamDropdown) ragamDropdown.classList.remove('open');
+      }
     });
   });
 

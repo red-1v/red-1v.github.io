@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Robusta Aceh — Ngupi</title>
+<meta name="description" content="Mengenal Robusta Aceh, kopi dataran rendah yang tangguh dengan karakter tegas, kafein tinggi, dan menjadi tulang punggung konsumsi harian masyarakat Aceh." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root { --bg: #f5f0e8; --bg-alt: #ebe4d6; --bg-deep: #1a120b; --ink: #2a1810; --ink-soft: #5c3a21; --ink-muted: #8a6a52; --accent: #8b4513; --gold: #c17817; --line: rgba(42, 24, 16, 0.12); --shadow: 0 20px 60px -20px rgba(42, 24, 16, 0.25); --radius: 2px; --maxw: 1200px; --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background: var(--gold); color: var(--bg-deep); }
+  img { max-width: 100%; display: block; object-fit: cover; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 0; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; letter-spacing: 0.05em; color: var(--ink); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-links a { position: relative; padding: 0.25rem 0; transition: color 0.3s; color: var(--ink-soft); }
+  .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.4s var(--ease); }
+  .nav-links a:hover { color: var(--accent); } .nav-links a:hover::after { width: 100%; }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-menu { position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s var(--ease); min-width: 220px; z-index: 101; }
+  .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-dropdown-menu a { display: block; padding: 0.75rem 1.25rem; font-size: 0.8rem; border-bottom: 1px solid var(--line); text-transform: none; letter-spacing: 0.02em; }
+  .nav-dropdown-menu a:last-child { border-bottom: none; }
+  .nav-dropdown-menu a:hover { background: var(--bg-alt); color: var(--accent); }
+  .nav-dropdown-menu a::after { display: none; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 32px; height: 32px; position: relative; }
+  .nav-toggle span { position: absolute; left: 0; width: 100%; height: 1.5px; background: var(--ink); transition: all 0.3s var(--ease); }
+  .nav-toggle span:nth-child(1) { top: 8px; } .nav-toggle span:nth-child(2) { top: 15px; } .nav-toggle span:nth-child(3) { top: 22px; }
+  .nav-toggle.open span:nth-child(1) { top: 15px; transform: rotate(45deg); } .nav-toggle.open span:nth-child(2) { opacity: 0; } .nav-toggle.open span:nth-child(3) { top: 15px; transform: rotate(-45deg); }
+  .page-header { min-height: 60vh; display: flex; align-items: flex-end; position: relative; padding: 10rem 0 5rem; overflow: hidden; background: var(--bg-deep); margin-top: 60px; }
+  .page-header-image { position: absolute; inset: 0; z-index: 0; }
+  .page-header-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(0.7) contrast(1.1); }
+  .page-header-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26, 18, 11, 0.4), rgba(26, 18, 11, 0.85)); z-index: 1; }
+  .page-header-content { position: relative; z-index: 2; max-width: 800px; }
+  .page-header-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .page-header h1 { font-size: clamp(3rem, 7vw, 5.5rem); color: var(--bg); line-height: 1.05; margin-bottom: 1.5rem; }
+  .page-header-subtitle { font-size: 1.2rem; color: rgba(245, 240, 232, 0.85); font-weight: 300; max-width: 600px; }
+  .content-section { padding: clamp(4rem, 8vw, 7rem) 0; }
+  .section-label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.75rem; }
+  .section-label::before, .section-label::after { content: ''; width: 30px; height: 1px; background: var(--accent); }
+  .section-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 2rem; }
+  .content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(3rem, 5vw, 5rem); align-items: start; }
+  .content-text p { margin-bottom: 1.5rem; color: var(--ink-soft); font-size: 1.05rem; line-height: 1.85; }
+  .content-text em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .content-image { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .content-image img { width: 100%; height: auto; }
+  .process-steps { position: relative; padding-left: 3rem; margin-top: 3rem; }
+  .process-steps::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--line); }
+  .step-item { position: relative; padding-bottom: 3rem; }
+  .step-item:last-child { padding-bottom: 0; }
+  .step-item::before { content: ''; position: absolute; left: -3rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--bg); }
+  .step-number { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; }
+  .step-title { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .step-desc { color: var(--ink-soft); line-height: 1.75; }
+  .tasting-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .tasting-item { text-align: center; padding: 2.5rem 2rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); transition: all 0.3s var(--ease); }
+  .tasting-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+  .tasting-icon { width: 60px; height: 60px; margin: 0 auto 1.5rem; color: var(--accent); }
+  .tasting-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.75rem; }
+  .tasting-value { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; }
+  .brewing-section { background: var(--bg-deep); color: var(--bg); }
+  .brewing-section .section-label { color: var(--gold); }
+  .brewing-section .section-label::before, .brewing-section .section-label::after { background: var(--gold); }
+  .brewing-section .section-title { color: var(--bg); }
+  .brewing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .brewing-card { background: rgba(245, 240, 232, 0.05); border: 1px solid rgba(245, 240, 232, 0.15); border-radius: var(--radius); padding: 2.5rem 2rem; transition: all 0.3s var(--ease); }
+  .brewing-card:hover { background: rgba(245, 240, 232, 0.1); transform: translateY(-4px); }
+  .brewing-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--gold); }
+  .brewing-card p { color: rgba(245, 240, 232, 0.75); line-height: 1.7; margin-bottom: 1rem; }
+  .brewing-specs { list-style: none; font-size: 0.9rem; }
+  .brewing-specs li { padding: 0.4rem 0; border-bottom: 1px solid rgba(245, 240, 232, 0.1); }
+  .brewing-specs li:last-child { border-bottom: none; }
+  .brewing-specs strong { color: var(--bg); }
+  .varieties-overview { background: var(--bg-alt); }
+  .varieties-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .variety-card-link { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: all 0.5s var(--ease); display: block; }
+  .variety-card-link:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+  .variety-card-link .variety-image { width: 100%; height: 200px; overflow: hidden; }
+  .variety-card-link .variety-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+  .variety-card-link:hover .variety-image img { transform: scale(1.05); }
+  .variety-card-link .variety-content { padding: 2rem 1.75rem; }
+  .variety-card-link .variety-name { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .variety-card-link .variety-origin { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 1rem; }
+  .variety-card-link .variety-desc { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.7; }
+  .back-link { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: var(--bg-alt); color: var(--ink); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: var(--radius); transition: all 0.3s var(--ease); margin-top: 4rem; }
+  .back-link:hover { background: var(--accent); color: var(--bg); transform: translateX(-4px); }
+  .back-link svg { width: 16px; height: 16px; transition: transform 0.3s var(--ease); }
+  .back-link:hover svg { transform: translateX(-4px); }
+  footer { background: var(--bg-deep); color: var(--bg); padding: 4rem 0 2.5rem; }
+  .footer-simple { text-align: center; font-size: 0.9rem; color: rgba(245, 240, 232, 0.6); }
+  .footer-simple a { color: var(--gold); text-decoration: underline; }
+  .reveal { opacity: 0; transform: translateY(35px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 900px) {
+    .nav-toggle { display: block; }
+    .nav-links { position: fixed; top: 0; right: 0; height: 100vh; width: min(340px, 85vw); background: var(--bg); flex-direction: column; padding: 7rem 2.5rem 2.5rem; gap: 1rem; transform: translateX(100%); transition: transform 0.4s var(--ease); border-left: 1px solid var(--line); box-shadow: -20px 0 60px rgba(42, 24, 16, 0.15); overflow-y: auto; }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 1.05rem; }
+    .nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-left: 2px solid var(--accent); margin-top: 0.5rem; margin-left: 1rem; display: none; }
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .content-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .page-header { min-height: 50vh; padding: 8rem 0 4rem; }
+  }
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+    .process-steps { padding-left: 2.5rem; }
+    .step-item::before { left: -2.5rem; }
+    .tasting-grid, .varieties-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="../index.html" class="logo">Ngupi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#sejarah">Sejarah</a></li>
+      <li class="nav-dropdown" id="ragamDropdown">
+        <a href="../index.html#ragam">Ragam</a>
+        <div class="nav-dropdown-menu">
+          <a href="gayo-arabika.html">Gayo Arabika</a>
+          <a href="saree.html">Saree</a>
+          <a href="robusta.html">Robusta Aceh</a>
+          <a href="catimor.html">Catimor Gayo</a>
+          <a href="wine-gayo.html">Wine Gayo</a>
+          <a href="honey-process.html">Honey Process</a>
+        </div>
+      </li>
+      <li><a href="../index.html#sajian">Penyajian</a></li>
+      <li><a href="../index.html#budaya">Budaya</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-image">
+    <img src="../images/kopi-robusta-aceh.jpg" alt="Robusta Aceh" onerror="this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1920&h=1080&fit=crop'">
+  </div>
+  <div class="page-header-overlay"></div>
+  <div class="container page-header-content">
+    <div class="page-header-label">Ragam Kopi Aceh</div>
+    <h1>Robusta Aceh</h1>
+    <p class="page-header-subtitle">Kopi dataran rendah yang tangguh, menawarkan karakter tegas, pahit yang bersih, dan kandungan kafein tinggi — pilihan klasik untuk kopi tubruk sehari-hari.</p>
+  </div>
+</header>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-text reveal">
+        <div class="section-label">Asal Usul</div>
+        <h2 class="section-title">Kekuatan dari Dataran Rendah</h2>
+        <p>Berbeda dengan saudara kembarnya yang tumbuh di dataran tinggi, Robusta Aceh (<em>Coffea canephora</em>) tumbuh subur di wilayah dataran rendah Aceh, seperti Aceh Selatan, Aceh Barat, dan sebagian Aceh Jaya. Ketinggian 400 hingga 800 meter di atas permukaan laut dengan suhu yang lebih hangat justru menjadi lingkungan ideal bagi tanaman ini.</p>
+        <p>Tanaman Robusta dikenal sangat tangguh. Ia tahan terhadap hama, penyakit (terutama karat daun — penyakit jamur yang merusak daun kopi), dan perubahan cuaca yang ekstrem. Ketahanan inilah yang membuatnya menjadi pilihan utama bagi petani yang lahannya tidak memungkinkan untuk menanam Arabika.</p>
+        <p>Meski sering dianggap "kelas dua" di pasar global, Robusta Aceh memiliki pasar lokal yang sangat kuat. Ia adalah jiwa dari "kopi tubruk" pagi hari — kopi yang diseduh langsung dengan mencampurkan bubuk kopi ke air panas — memberikan dorongan kafein yang dibutuhkan para pekerja, nelayan, dan petani untuk memulai hari.</p>
+      </div>
+      <div class="content-image reveal">
+        <img src="../images/petani-gayo-panen.jpg" alt="Petani kopi di Aceh" onerror="this.src='https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=800&h=1000&fit=crop'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-label reveal">Proses Pengolahan</div>
+    <h2 class="section-title reveal">Kesederhanaan yang Efektif</h2>
+    <p class="reveal" style="max-width: 720px; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.8;">
+      Pengolahan Robusta cenderung lebih sederhana dibandingkan Arabika, namun tetap memerlukan ketelitian untuk menghindari rasa gosong atau fermentasi yang tidak diinginkan.
+    </p>
+    <div class="process-steps reveal">
+      <div class="step-item">
+        <div class="step-number">Tahap 01</div>
+        <h3 class="step-title">Panen Selektif</h3>
+        <p class="step-desc">Meski lebih murah, petani Aceh yang berkualitas tetap memetik buah merah matang untuk memastikan kadar gula dan kafein yang optimal. Buah yang belum matang akan memberikan rasa sepat dan asam yang tidak seimbang.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">Tahap 02</div>
+        <h3 class="step-title">Proses Alami (<em>Natural Process</em>)</h3>
+        <p class="step-desc">Sebagian besar Robusta Aceh diproses secara alami. Buah kopi utuh dijemur di bawah terik matahari selama 2 hingga 3 minggu hingga kadar air turun menjadi 12 persen. Proses ini disebut "alami" karena buah dikeringkan utuh tanpa melalui tahap pengupasan atau pencucian.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">Tahap 03</div>
+        <h3 class="step-title">Pengupasan Kering (<em>Dry Hulling</em>)</h3>
+        <p class="step-desc">Setelah benar-benar kering, kulit luar dan kulit ari dikupas sekaligus menggunakan mesin pengupas, menghasilkan biji hijau (<em>green bean</em> — biji kopi yang belum disangrai) yang siap disangrai. Proses ini lebih cepat dan lebih murah dibandingkan proses basah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="section-label reveal">Profil Rasa</div>
+    <h2 class="section-title reveal">Karakter yang Tegas</h2>
+    <div class="tasting-grid reveal">
+      <div class="tasting-item">
+        <svg class="tasting-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <ellipse cx="32" cy="32" rx="18" ry="26" stroke="currentColor" stroke-width="2"/>
+          <path d="M32 8 C32 8 28 20 32 32 C36 44 32 56 32 56" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="tasting-label">Ketebalan</div>
+        <div class="tasting-value">Tebal & Padat</div>
+      </div>
+      <div class="tasting-item">
+        <svg class="tasting-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 8 C32 8 16 28 16 40 C16 49 23 56 32 56 C41 56 48 49 48 40 C48 28 32 8 32 8 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M24 42 C24 42 28 38 32 38" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+        </svg>
+        <div class="tasting-label">Keasaman</div>
+        <div class="tasting-value">Sangat Rendah</div>
+      </div>
+      <div class="tasting-item">
+        <svg class="tasting-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M20 24 L20 40 L32 48 L44 40 L44 24 L32 16 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="32" cy="32" r="3" fill="currentColor"/>
+          <circle cx="20" cy="24" r="2" fill="currentColor"/>
+          <circle cx="44" cy="24" r="2" fill="currentColor"/>
+          <circle cx="20" cy="40" r="2" fill="currentColor"/>
+          <circle cx="44" cy="40" r="2" fill="currentColor"/>
+          <circle cx="32" cy="48" r="2" fill="currentColor"/>
+          <path d="M32 16 L32 10 M44 24 L50 20 M44 40 L50 44 M32 48 L32 54 M20 40 L14 44 M20 24 L14 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <div class="tasting-label">Kafein</div>
+        <div class="tasting-value">Tinggi (2,2%)</div>
+      </div>
+      <div class="tasting-item">
+        <svg class="tasting-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <circle cx="32" cy="34" r="22" stroke="currentColor" stroke-width="2"/>
+          <path d="M32 22 L32 34 L40 38" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26 8 L38 8 M30 4 L34 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="tasting-label">Sisa Rasa</div>
+        <div class="tasting-value">Tinggal Lama</div>
+      </div>
+    </div>
+    <div class="content-grid" style="margin-top: 4rem;">
+      <div class="content-text reveal">
+        <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Catatan Rasa Utama</h3>
+        <p><strong>Tegas & Beraroma Tanah:</strong> Rasa tanah dan kayu yang kuat, memberikan fondasi yang kokoh pada setiap tegukan. Karakter ini berasal dari proses pengeringan alami yang membiarkan buah berfermentasi perlahan.</p>
+        <p><strong>Kacang Panggang & Cokelat:</strong> Nuansa kacang panggang dan cokelat hitam pekat yang muncul terutama saat diseduh dengan air panas. Rasa ini sering dibandingkan dengan cokelat hitam 85%.</p>
+        <p><strong>Pahit yang Bersih:</strong> Pahitnya Robusta Aceh berbeda dengan pahit gosong. Ini adalah pahit yang "bersih", mirip dengan cokelat hitam pekat, yang justru dicari oleh pecinta kopi tubruk. Pahit ini berasal dari kandungan kafein yang tinggi.</p>
+      </div>
+      <div class="content-image reveal">
+        <img src="../images/kopi-gayo-arabika.jpg" alt="Biji kopi Robusta" onerror="this.src='https://plus.unsplash.com/premium_photo-1675716448244-78d526009a59?w=800&h=1000&fit=crop'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section brewing-section">
+  <div class="container">
+    <div class="section-label reveal">Rekomendasi Penyeduhan</div>
+    <h2 class="section-title reveal">Cara Terbaik Menikmati Robusta</h2>
+    <div class="brewing-grid reveal">
+      <div class="brewing-card">
+        <h3>Kopi Tubruk Klasik</h3>
+        <p>Metode paling otentik. Gilingan kasar, air mendidih, diamkan 4 menit. Saring atau biarkan ampas mengendap. Ini adalah cara paling jujur untuk merasakan karakter asli Robusta Aceh.</p>
+        <ul class="brewing-specs">
+          <li><strong>Perbandingan:</strong> 1:12 (15 gram kopi : 180 ml air)</li>
+          <li><strong>Suhu Air:</strong> 95-100°C</li>
+          <li><strong>Waktu Seduh:</strong> 4 menit</li>
+        </ul>
+      </div>
+      <div class="brewing-card">
+        <h3>Es Kopi Susu</h3>
+        <p>Robusta adalah dasar sempurna untuk es kopi susu. Ketebalannya yang padat tidak "kalah" oleh susu dan gula. Karakter pahitnya justru menciptakan keseimbangan yang indah dengan manisnya susu.</p>
+        <ul class="brewing-specs">
+          <li><strong>Metode:</strong> Seduhan Dingin (<em>Cold Brew</em>) atau Espresso</li>
+          <li><strong>Campuran:</strong> Susu segar & Gula aren</li>
+          <li><strong>Perbandingan:</strong> 1 bagian kopi : 3 bagian susu</li>
+        </ul>
+      </div>
+      <div class="brewing-card">
+        <h3>Campuran (<em>Blend</em>)</h3>
+        <p>Sering dicampur 20 hingga 30 persen dengan Arabika untuk menambah ketebalan, <em>crema</em> (lapisan krim cokelat di atas espresso), dan dorongan kafein. Campuran ini populer di warung kopi dan kedai kopi modern.</p>
+        <ul class="brewing-specs">
+          <li><strong>Perbandingan Campuran:</strong> 70% Arabika : 30% Robusta</li>
+          <li><strong>Hasil:</strong> Seimbang & Kompleks</li>
+          <li><strong>Cocok untuk:</strong> Espresso dan Kopi Susu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section varieties-overview">
+  <div class="container">
+    <div class="section-label reveal">Jelajahi Ragam Lainnya</div>
+    <h2 class="section-title reveal">Varietas Kopi Aceh</h2>
+    <div class="varieties-grid reveal">
+      <a href="gayo-arabika.html" class="variety-card-link">
+        <div class="variety-image"><img src="../images/kopi-gayo-arabika.jpg" alt="Gayo Arabika" onerror="this.src='https://plus.unsplash.com/premium_photo-1675716448244-78d526009a59?w=600&h=400&fit=crop'"></div>
+        <div class="variety-content"><h3 class="variety-name">Gayo Arabika</h3><div class="variety-origin">Aceh Tengah · Bener Meriah</div><p class="variety-desc">Biji arabika paling dikenal dari Aceh dengan proses giling basah yang khas.</p></div>
+      </a>
+      <a href="saree.html" class="variety-card-link">
+        <div class="variety-image"><img src="../images/kopi-saree.jpeg" alt="Saree" onerror="this.src='https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&h=400&fit=crop'"></div>
+        <div class="variety-content"><h3 class="variety-name">Saree</h3><div class="variety-origin">Warung Kopi Aceh</div><p class="variety-desc">Kopi tubruk khas Aceh yang dicampur kuning telur dan madu, tekstur lembut unik.</p></div>
+      </a>
+      <a href="catimor.html" class="variety-card-link">
+        <div class="variety-image"><img src="../images/petani-gayo-panen.jpg" alt="Catimor Gayo" onerror="this.src='https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=600&h=400&fit=crop'"></div>
+        <div class="variety-content"><h3 class="variety-name">Catimor Gayo</h3><div class="variety-origin">Lereng Bukit</div><p class="variety-desc">Varietas hibrida tahan penyakit dengan rasa beraroma herbal yang khas dan seimbang.</p></div>
+      </a>
+      <a href="wine-gayo.html" class="variety-card-link">
+        <div class="variety-image"><img src="../images/wine-gayo-process.jpg" alt="Wine Gayo" onerror="this.src='https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=600&h=400&fit=crop'"></div>
+        <div class="variety-content"><h3 class="variety-name">Wine Gayo</h3><div class="variety-origin">Proses Alami</div><p class="variety-desc">Diproses alami, menghasilkan karakter beraroma buah seperti anggur merah yang langka.</p></div>
+      </a>
+      <a href="honey-process.html" class="variety-card-link">
+        <div class="variety-image"><img src="../images/honey-process.jpeg" alt="Proses Madu" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop'"></div>
+        <div class="variety-content"><h3 class="variety-name">Proses Madu</h3><div class="variety-origin">Eksperimen Petani</div><p class="variety-desc">Proses cuci parsial yang menghasilkan kemanisan alami yang lebih menonjol.</p></div>
+      </a>
+    </div>
+    <div style="text-align: center;">
+      <a href="../index.html#ragam" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M13 7 L1 7 M6 2 L1 7 L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Kembali ke Ragam Kopi
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <p>&copy; 2026 Ngupi — Mendokumentasikan Budaya Kopi Aceh</p>
+      <p style="margin-top: 0.5rem;">Kembali ke <a href="../index.html">Halaman Utama</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  const ragamDropdown = document.getElementById('ragamDropdown');
+  toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
+  if (ragamDropdown) {
+    ragamDropdown.querySelector('a').addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) { e.preventDefault(); ragamDropdown.classList.toggle('open'); }
+    });
+  }
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (!a.parentElement.classList.contains('nav-dropdown')) {
+        toggle.classList.remove('open'); links.classList.remove('open');
+        if (ragamDropdown) ragamDropdown.classList.remove('open');
+      }
+    });
+  });
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
